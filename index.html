@@ -118,11 +118,71 @@ aside{box-shadow:-10px 0 40px -10px color-mix(in srgb,var(--accent) 50%,transpar
 .seg{border-radius:999px;padding:4px;gap:4px}
 .seg button{border-radius:999px}
 @media (max-width:520px){header{padding-left:14px;padding-right:14px}.brand{font-size:22px}#openCfg{width:48px;height:48px}.seg{width:100%}.seg button{flex:1;padding:11px 8px}}
+
+.brand{display:flex;align-items:center;gap:12px}
+.bt{white-space:nowrap}
+.logo{height:40px;width:auto;flex:none;color:var(--accent);filter:drop-shadow(0 0 10px color-mix(in srgb,var(--accent) 70%,transparent));transition:transform .3s}
+.logo:hover{transform:rotate(-6deg) scale(1.08)}
+.acts{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:6px 0 0}
+.acts .exp,.tools .exp{width:auto;flex:0 1 240px}
+#expMsg,#csvMsg{margin:0;font-size:12px;color:var(--muted)}
+.trk{margin-top:56px;animation:up .6s both}
+.trkhead{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.trkhead h2{margin:0;font-family:Rubik,Arial,sans-serif;font-size:clamp(24px,3.4vw,34px);padding-left:14px;border-left:6px solid var(--accent)}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding:0 6px;border-bottom:2px solid var(--accent)}
+.tab{font:inherit;font-size:14px;flex:none;padding:11px 20px;background:color-mix(in srgb,var(--accent) 10%,var(--panel));color:var(--muted);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-bottom:0;border-radius:12px 12px 0 0;cursor:pointer;transition:.2s}
+.tab:hover{color:var(--text);background:color-mix(in srgb,var(--accent) 22%,var(--panel))}
+.tab.on{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 70%,#fff),var(--accent));color:var(--on);box-shadow:0 -4px 18px -4px color-mix(in srgb,var(--accent) 80%,transparent)}
+.tbwrap{background:var(--panel);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-top:0;border-radius:0 0 16px 16px;overflow-x:auto;box-shadow:0 12px 30px -14px color-mix(in srgb,var(--accent) 60%,transparent)}
+#tbl{width:100%;border-collapse:separate;border-spacing:0}
+#tbl.wk{min-width:560px}
+#tbl th,#tbl td{padding:0;border-bottom:1px solid var(--line);text-align:left}
+#tbl thead th{padding:14px 16px;background:linear-gradient(120deg,var(--accent),color-mix(in srgb,var(--accent) 60%,#fff));color:var(--on);font-size:15px;text-align:center}
+#tbl thead th:first-child{text-align:left;position:sticky;left:0;z-index:1}
+#tbl tbody th{padding:14px 16px;font-size:16px;position:sticky;left:0;background:color-mix(in srgb,var(--accent) 8%,var(--panel));white-space:nowrap}
+#tbl tbody th small{color:var(--muted);font-weight:400;font-size:12px;margin-left:4px}
+#tbl tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+#tbl tbody tr:hover td{background:color-mix(in srgb,var(--accent) 13%,transparent)}
+#tbl tbody tr:last-child>*{border-bottom:0}
+#tbl input{font:inherit;font-size:16px;width:100%;min-width:90px;padding:14px 16px;background:transparent;color:var(--text);border:0;outline:none;text-align:center;border-radius:0;transition:.2s}
+#tbl input:focus{background:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:inset 0 -3px 0 var(--accent)}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-end;margin-top:16px}
+.tools .lbl{color:var(--muted);font-size:13px;margin-right:auto}
+.cbox{margin-top:32px;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 12%,var(--panel)),var(--panel) 75%);border:1px solid color-mix(in srgb,var(--accent) 50%,var(--line));border-radius:16px;padding:20px;box-shadow:0 8px 22px -10px color-mix(in srgb,var(--accent) 60%,transparent)}
+.cbox h3{margin:0 0 14px;font-size:18px;font-family:Rubik,Arial,sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:inherit;font-size:13px;padding:9px 16px;border-radius:999px;background:var(--panel);color:var(--muted);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text);border-color:var(--accent)}
+.chip.on{background:linear-gradient(120deg,var(--accent),color-mix(in srgb,var(--accent) 60%,#fff));color:var(--on);border-color:transparent;box-shadow:0 0 18px -2px color-mix(in srgb,var(--accent) 80%,transparent)}
+.svgw{overflow-x:auto}
+.svgw svg{display:block;width:100%;min-width:560px;height:auto}
+.empty{color:var(--muted);text-align:center;padding:48px 0;margin:0}
+.ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.2s ease forwards;filter:drop-shadow(0 0 6px var(--accent))}
+.area{opacity:0;animation:fin 1s .6s forwards}
+.dot{fill:var(--accent);stroke:var(--panel);stroke-width:2;opacity:0;animation:fin .4s forwards;filter:drop-shadow(0 0 5px var(--accent))}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fin{to{opacity:1}}
+.still .ln{animation:none;stroke-dashoffset:0}
+.still .area,.still .dot{animation:none;opacity:1}
+@media (max-width:520px){.logo{height:26px}.brand{gap:8px}.tools .lbl{width:100%}.tools .exp,.acts .exp{flex:1 1 100%}.cbox{padding:14px}}
+@media (max-width:420px){.brand{font-size:17px}}
+
+.c{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px 16px;cursor:text;transition:.2s}
+#tbl input{width:3ch;min-width:0;padding:0;text-align:left;background:transparent;box-shadow:none}
+#tbl input:focus{background:transparent;box-shadow:none}
+.c:focus-within{background:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:inset 0 -3px 0 var(--accent)}
+.c .u{display:none;color:var(--muted);font-size:14px}
+.c.has .u{display:inline}
+.tip{opacity:0;animation:fin .4s forwards}
+.tip text{font-family:"Prompt",Arial,sans-serif;fill:var(--text);font-size:11px;font-weight:300}
+.still .tip{animation:none;opacity:1}
+@media (max-width:520px){.svgw svg{min-width:640px}}
+.svgw text,#ctitle{font-family:"Prompt",Arial,sans-serif}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand"><b>Convertech</b> <span>-</span> Okr Dashboard</div>
+  <div class="brand"><svg class="logo" viewBox="0 0 256 208" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M256 0H104C46.5624 0 0 46.5624 0 104C0 161.438 46.5624 208 104 208H136V160H104C73.0721 160 48 134.928 48 104C48 73.0721 73.0721 48 104 48H208C234.51 48 256 26.5097 256 0Z" fill="currentColor"/><path d="M192 56H144V207.998C170.51 207.998 192 186.508 192 159.998V56Z" fill="currentColor"/></svg><div class="bt"><b>Convertech</b> <span>-</span> Okr Dashboard</div></div>
   <button class="btn" id="openCfg" aria-label="Abrir configuracoes"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </header>
 
@@ -143,6 +203,31 @@ aside{box-shadow:-10px 0 40px -10px color-mix(in srgb,var(--accent) 50%,transpar
 
   <div class="hint" id="hint"></div>
   <section class="grid" id="grid"></section>
+  <div class="acts">
+    <button class="btn exp" id="expPng">Exportar imagem</button>
+    <button class="btn exp" id="expPdf">Exportar PDF</button>
+    <span id="expMsg"></span>
+  </div>
+
+  <section class="trk">
+    <div class="trkhead">
+      <h2>Acompanhamento</h2>
+      <div class="seg" id="divSeg"><button data-div="month">Meses</button><button data-div="week">Semanas</button></div>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="tbwrap"><table id="tbl"></table></div>
+    <div class="tools">
+      <span class="lbl">Exportar tabela em .csv (separado por vírgula)</span>
+      <button class="btn exp" data-csv="month">CSV por mês</button>
+      <button class="btn exp" data-csv="week">CSV por semana</button>
+      <span id="csvMsg"></span>
+    </div>
+    <div class="cbox">
+      <h3 id="ctitle"></h3>
+      <div class="chips" id="chips"></div>
+      <div class="svgw" id="chart"></div>
+    </div>
+  </section>
 </main>
 
 <div class="scrim" id="scrim"></div>
@@ -157,9 +242,6 @@ aside{box-shadow:-10px 0 40px -10px color-mix(in srgb,var(--accent) 50%,transpar
   <div class="cols" id="cols"></div>
   <h4>Imposto</h4>
   <div class="field"><input id="taxRate" type="text" inputmode="decimal" value="10"><span>% sobre o investimento</span></div>
-  <h4>Exportar</h4>
-  <button class="btn exp" id="expBtn">Exportar OKR como imagem</button>
-  <p id="expMsg"></p>
 </aside>
 
 <script>
@@ -175,7 +257,7 @@ var KPI=[
  {k:"invest",n:"Valor do Investimento",d:"Valor que deve ser investido pelo cliente",t:"money",div:1}
 ];
 KPI[0].n="Resultado";KPI[1].n="Ticket-M\u00e9dio";KPI[3].n="Convers\u00e3o";KPI[5].n="Custo por Lead";KPI[6].n="Valor do Investimento";
-var S={mode:"result",per:"month",client:"Nome do Cliente",taxOn:false,taxRate:10,theme:null,accent:4,v:{}};
+var S={mode:"result",per:"month",client:"Nome do Cliente",taxOn:false,taxRate:10,theme:null,accent:4,v:{},t:{},tab:1,div:"month",chip:"result"};
 try{var sv=JSON.parse(localStorage.getItem("convertech_okr")||"null");if(sv)S=Object.assign(S,sv)}catch(e){}
 function save(){try{localStorage.setItem("convertech_okr",JSON.stringify(S))}catch(e){}}
 var $=function(i){return document.getElementById(i)};
@@ -278,13 +360,12 @@ function msg(t){$("expMsg").textContent=t}
 function draw(){
  var cs=getComputedStyle(document.documentElement),g=function(n){return cs.getPropertyValue(n).trim()};
  var bg=g("--bg"),pn=g("--panel"),tx=g("--text"),mu=g("--muted"),ac=g("--accent"),on=g("--on");
- var W=1600,P=64,gap=24,cw=(W-P*2-gap*3)/4,ch=170,th=82,H=820;
+ var W=1600,P=64,gap=24,cw=(W-P*2-gap*3)/4,ch=170,th=82,H=770;
  var cv=document.createElement("canvas");cv.width=W;cv.height=H;var c=cv.getContext("2d");
  c.fillStyle=bg;c.fillRect(0,0,W,H);
  [[0,0,W*.55],[W,H,W*.5]].forEach(function(o){var gr=c.createRadialGradient(o[0],o[1],0,o[0],o[1],o[2]);gr.addColorStop(0,ac);gr.addColorStop(1,bg);c.globalAlpha=.4;c.fillStyle=gr;c.fillRect(0,0,W,H);c.globalAlpha=1});
  c.textBaseline="alphabetic";c.textAlign="left";
- c.font='700 36px Prompt,Arial,sans-serif';c.fillStyle=ac;c.fillText("Convertech",P,80);
- var bw=c.measureText("Convertech ").width;c.font='300 36px Prompt,Arial,sans-serif';c.fillStyle=tx;c.fillText("- Okr Dashboard",P+bw,80);
+ c.save();c.translate(0,-60);
  c.textAlign="center";
  var name=S.client||"Cliente",fs=72;
  do{c.font='600 '+fs+'px Rubik,Arial,sans-serif';fs-=2}while(c.measureText(name).width>W-P*2&&fs>24);
@@ -309,24 +390,108 @@ function draw(){
   var vs=46;do{c.font='400 '+vs+'px "Arial Rounded MT Bold",Arial,sans-serif';vs-=2}while(c.measureText(t).width>cw-44&&vs>16);
   c.fillStyle=tx;c.fillText(t,x+22,y+th+(ch-th)/2+vs*.35);
  });
+ c.restore();
  c.font='400 22px "Arial Rounded MT Bold",Arial,sans-serif';c.fillStyle=mu;c.textAlign="left";
  c.fillText(S.taxOn?"Imposto incluso no investimento ("+f(S.taxRate,"pct")+"%)":"Imposto n\u00e3o considerado",P,H-44);
  c.textAlign="right";c.fillText(new Date().toLocaleDateString("pt-BR"),W-P,H-44);
  return cv;
 }
-$("expBtn").onclick=function(){
- msg("Gerando imagem...");
- var fonts=["600 40px Rubik","700 30px Prompt","300 30px Prompt"].map(function(x){return document.fonts.load(x)});
- Promise.all(fonts).catch(function(){}).then(function(){
-  draw().toBlob(function(b){
-   if(!b){msg("N\u00e3o foi poss\u00edvel gerar a imagem.");return}
-   var fn="okr-"+((S.client||"cliente").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"cliente")+".png";
-   if(dl){dl.save({filename:fn,data:b}).then(function(){msg("Imagem exportada.")}).catch(function(e){msg(e&&e.code==="declined"?"":"Exporta\u00e7\u00e3o indispon\u00edvel nesta visualiza\u00e7\u00e3o.")})}
-   else if(window.claude){msg("Exporta\u00e7\u00e3o indispon\u00edvel nesta visualiza\u00e7\u00e3o.")}
-   else{var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fn;document.body.appendChild(a);a.click();a.remove();msg("Imagem exportada.")}
-  },"image/png");
+function pdf(by,w,h){
+ var en=new TextEncoder(),parts=[],off=0,xr=[];
+ function add(x){var b=typeof x==="string"?en.encode(x):x;parts.push(b);off+=b.length}
+ function obj(n,b){xr[n]=off;add(n+" 0 obj\n"+b+"\nendobj\n")}
+ var pw=w*.75,ph=h*.75,ct="q "+pw+" 0 0 "+ph+" 0 0 cm /Im0 Do Q";
+ add("%PDF-1.4\n");
+ obj(1,"<</Type/Catalog/Pages 2 0 R>>");
+ obj(2,"<</Type/Pages/Kids[3 0 R]/Count 1>>");
+ obj(3,"<</Type/Page/Parent 2 0 R/MediaBox[0 0 "+pw+" "+ph+"]/Resources<</XObject<</Im0 4 0 R>>>>/Contents 5 0 R>>");
+ xr[4]=off;add("4 0 obj\n<</Type/XObject/Subtype/Image/Width "+w+"/Height "+h+"/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Length "+by.length+">>\nstream\n");add(by);add("\nendstream\nendobj\n");
+ obj(5,"<</Length "+ct.length+">>\nstream\n"+ct+"\nendstream");
+ var xo=off,x="xref\n0 6\n0000000000 65535 f \n";
+ for(var i=1;i<=5;i++)x+=String(xr[i]).padStart(10,"0")+" 00000 n \n";
+ add(x+"trailer\n<</Size 6/Root 1 0 R>>\nstartxref\n"+xo+"\n%%EOF");
+ return new Blob(parts,{type:"application/pdf"});
+}
+function saveBlob(b,fn,say){
+ var bad="Exporta\u00e7\u00e3o indispon\u00edvel nesta visualiza\u00e7\u00e3o.";
+ if(dl){dl.save({filename:fn,data:b}).then(function(){say("Arquivo exportado.")}).catch(function(e){say(e&&e.code==="declined"?"":bad)})}
+ else if(window.claude){say(bad)}
+ else{var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fn;document.body.appendChild(a);a.click();a.remove();say("Arquivo exportado.")}
+}
+function slug(){return (S.client||"cliente").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"cliente"}
+function withFonts(cb){document.fonts.load("600 40px Rubik").catch(function(){}).then(cb)}
+$("expPng").onclick=function(){msg("Gerando imagem...");withFonts(function(){draw().toBlob(function(b){if(!b){msg("N\u00e3o foi poss\u00edvel gerar a imagem.");return}saveBlob(b,"okr-"+slug()+".png",msg)},"image/png")})};
+$("expPdf").onclick=function(){msg("Gerando PDF...");withFonts(function(){var cv=draw(),bin=atob(cv.toDataURL("image/jpeg",.95).split(",")[1]),by=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)by[i]=bin.charCodeAt(i);saveBlob(pdf(by,cv.width,cv.height),"okr-"+slug()+".pdf",msg)})};
+
+/* ===== Acompanhamento ===== */
+var TU={money:"R$",pct:"%",num:"un."};
+function tk(mo,wk,k){return wk?"w"+mo+"_"+wk+"_"+k:"m"+mo+"_"+k}
+function segs(){document.querySelectorAll("#divSeg button").forEach(function(b){b.classList.toggle("on",b.dataset.div===S.div)})}
+function tabs(){
+ var t=$("tabs");t.innerHTML="";
+ for(var m=1;m<=12;m++){(function(m){
+  var b=document.createElement("button");b.className="tab"+(S.tab===m?" on":"");b.textContent="M\u00eas "+m;b.setAttribute("role","tab");
+  b.onclick=function(){S.tab=m;save();[].forEach.call(t.children,function(x,i){x.classList.toggle("on",i+1===m)});table();chart()};
+  t.appendChild(b)})(m)}
+}
+function table(){
+ var wk=S.div==="week",cols=wk?[1,2,3,4]:[0],h="<thead><tr><th>KPI</th>";
+ cols.forEach(function(c){h+="<th>"+(wk?"Semana "+c:"M\u00eas "+S.tab)+"</th>"});
+ h+="</tr></thead><tbody>";
+ KPI.forEach(function(d){
+  h+='<tr><th scope="row">'+d.n+"</th>";
+  cols.forEach(function(c){h+='<td><label class="c"><input data-t="'+tk(S.tab,c,d.k)+'" type="text" inputmode="decimal" placeholder="-" autocomplete="off" aria-label="'+d.n+'"><span class="u">'+TU[d.t]+"</span></label></td>"});
+  h+="</tr>";
  });
-};
+ var t=$("tbl");t.innerHTML=h+"</tbody>";t.className=wk?"wk":"";
+ t.querySelectorAll("input").forEach(function(el){
+  var fit=function(){el.style.width=Math.max(el.value.length,2)+1+"ch";el.parentNode.classList.toggle("has",el.value.trim()!=="")};
+  el.value=S.t[el.dataset.t]||"";fit();
+  el.addEventListener("input",function(){S.t[el.dataset.t]=el.value;fit();save();chart(false)});
+ });
+}
+function chart(anim){
+ var k=S.chip,d=KPI.filter(function(x){return x.k===k})[0],wk=S.div==="week",n=wk?4:12,lab=[],val=[];
+ for(var i=1;i<=n;i++){lab.push((wk?"S":"M")+i);var sv=wk?S.t[tk(S.tab,i,k)]:S.t[tk(i,0,k)];val.push(sv?parse(sv):null)}
+ var chips=$("chips");chips.innerHTML="";
+ KPI.forEach(function(x){var b=document.createElement("button");b.className="chip"+(x.k===k?" on":"");b.textContent=x.n;b.onclick=function(){S.chip=x.k;save();chart()};chips.appendChild(b)});
+ $("ctitle").textContent="Progresso de "+d.n+" - "+(wk?"Semanas do M\u00eas "+S.tab:"Meses");
+ var box=$("chart"),ok=val.filter(function(v){return v!=null});
+ box.className="svgw"+(anim===false?" still":"");
+ if(!ok.length){box.innerHTML='<p class="empty">Preencha a tabela para ver o progresso deste KPI.</p>';return}
+ var W=800,H=300,L=78,R=24,T=24,B=44,pw=W-L-R,ph=H-T-B,mx=Math.max.apply(null,ok)*1.15||1;
+ var X=function(i){return L+(n>1?i*pw/(n-1):0)},Y=function(v){return T+ph-v/mx*ph};
+ var s='<svg viewBox="0 0 '+W+" "+H+'" role="img" aria-label="Gr\u00e1fico de progresso"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".45"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>';
+ for(var g=0;g<=4;g++){var yy=T+ph-g*ph/4;s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="var(--line)"/><text x="'+(L-10)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+f(mx*g/4,d.t==="pct"?"pct":"num")+"</text>"}
+ lab.forEach(function(l,i){s+='<text x="'+X(i)+'" y="'+(H-14)+'" text-anchor="middle" font-size="10" fill="var(--muted)">'+l+"</text>"});
+ var pts=[];val.forEach(function(v,i){if(v!=null)pts.push([X(i),Y(v),v,lab[i]])});
+ var path=pts.map(function(q,i){return(i?"L":"M")+q[0]+" "+q[1]}).join(" "),last=pts[pts.length-1];
+ s+='<path class="area" d="'+path+" L"+last[0]+" "+(T+ph)+" L"+pts[0][0]+" "+(T+ph)+' Z" fill="url(#ga)"/>';
+ s+='<path class="ln" d="'+path+'" pathLength="1" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>';
+ pts.forEach(function(q,i){s+='<circle class="dot" cx="'+q[0]+'" cy="'+q[1]+'" r="5" style="animation-delay:'+(0.9+i*0.06)+'s"><title>'+q[3]+": "+f(q[2],d.t)+"</title></circle>"});
+ var nf=function(v){var t=v.toLocaleString("pt-BR",{maximumFractionDigits:2});return d.t==="money"?"R$ "+t:d.t==="pct"?t+"%":t};
+ var sp=n>1?pw/(n-1):pw,ws=pts.map(function(q){return nf(q[2]).length*6.6+8}),wide=Math.max.apply(null,ws)>sp*.95;
+ pts.forEach(function(q,i){
+  var w=ws[i],h=14,below=wide&&i%2===1&&q[1]+46<T+ph,rx=Math.min(Math.max(q[0]-w/2,2),W-w-2),ry=below?q[1]+8:q[1]-8-h,px=Math.min(Math.max(q[0],rx+10),rx+w-10);
+  var pg=below?px+","+(ry-5)+" "+(px-5)+","+ry+" "+(px+5)+","+ry:px+","+(ry+h+5)+" "+(px-5)+","+(ry+h)+" "+(px+5)+","+(ry+h);
+  s+='<g class="tip" style="animation-delay:'+(1+i*.06)+'s"><text x="'+(rx+w/2)+'" y="'+(ry+h/2+4)+'" text-anchor="middle">'+nf(q[2])+"</text></g>";
+ });
+ box.innerHTML=s+"</svg>";
+}
+function csvq(v){v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
+function num1(sv){var n=sv?parse(sv):null;return n==null?"":n}
+function csv(kind){
+ var wk=kind==="week",rows=[(wk?["M\u00eas","Semana"]:["M\u00eas"]).concat(KPI.map(function(d){return d.n+" ("+TU[d.t]+")"}))];
+ for(var m=1;m<=12;m++){
+  if(wk){for(var w=1;w<=4;w++)rows.push(["M\u00eas "+m,"Semana "+w].concat(KPI.map(function(d){return num1(S.t[tk(m,w,d.k)])})))}
+  else rows.push(["M\u00eas "+m].concat(KPI.map(function(d){return num1(S.t[tk(m,0,d.k)])})));
+ }
+ var txt="\uFEFF"+rows.map(function(r){return r.map(csvq).join(",")}).join("\r\n");
+ saveBlob(new Blob([txt],{type:"text/csv"}),"okr-"+slug()+(wk?"-por-semana":"-por-mes")+".csv",function(t){$("csvMsg").textContent=t});
+}
+document.querySelectorAll("[data-csv]").forEach(function(b){b.onclick=function(){csv(b.dataset.csv)}});
+document.querySelectorAll("#divSeg button").forEach(function(b){b.onclick=function(){S.div=b.dataset.div;save();segs();table();chart()}});
+segs();tabs();table();chart();
 })();
 </script>
 </body>
